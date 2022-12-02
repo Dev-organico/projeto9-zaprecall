@@ -1,12 +1,12 @@
 import Card from "./Card"
-import { cards } from "./Deck"
+import cards from "./Deck"
 
-export default function Cards(){
+export default function Cards({setDoneCount,doneCount}){
     return(
         <>
             {cards.map((el,i)=> 
             
-            <Card key={i+1}  question={el.question} asnwer={el.answer} index = {i+1}/>
+            <Card key={i+1}  doneCount={doneCount} setDoneCount={setDoneCount}  question={el.question} asnwer={el.answer} index = {i+1}/>
 
             
             )}
