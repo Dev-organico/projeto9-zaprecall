@@ -14,13 +14,13 @@ export default function Buttons({setDoneCount,doneCount,setClickOpen2,setClickCl
 
     return(
         <DivButtons>
-            <ButtonRed onClick={()=> clickButton("#FF3030")}>
+            <ButtonRed data-test="no-btn" onClick={()=> clickButton("#FF3030")}>
                 Não lembrei
             </ButtonRed>
-            <ButtonOrange onClick={()=> clickButton("#FF922E")}>
+            <ButtonOrange data-test="partial-btn" onClick={()=> clickButton("#FF922E")}>
                 Quase não lembrei
             </ButtonOrange>
-            <ButtonGreen onClick={()=> clickButton("#2FBE34")}>
+            <ButtonGreen data-test="zap-btn" onClick={()=> clickButton("#2FBE34")}>
                 Zap!
             </ButtonGreen>
         </DivButtons>

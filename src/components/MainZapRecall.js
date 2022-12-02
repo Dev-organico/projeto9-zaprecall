@@ -15,7 +15,7 @@ export default function MainZapRecall() {
             </Title>
             <Cards doneCount={doneCount} setDoneCount={setDoneCount}/>
             <Footer>
-                <p>
+                <p data-test="footer">
                     {doneCount}/{cards.length} CONCLUÍDOS
                 </p>
             </Footer>

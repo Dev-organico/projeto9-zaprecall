@@ -37,27 +37,39 @@ export default function Card({ question, asnwer, index, setDoneCount ,doneCount}
             return icone_certo
         }
     }
+
+    function selectTest(){
+        if(wordColor === "#FF3030"){
+            return "no-icon"
+        }
+        if(wordColor === "#FF922E"){
+            return "partial-icon"
+        }
+        if(wordColor === "#2FBE34"){
+            return "zap-icon"
+        }
+    }
         
 
         
 
     return (
 
-        <>
+        <div data-test="flashcard" >
             <CardClosed clicked={clickClosed}>
-                <p>
+                <p data-test="flashcard-text">
                     {`Pergunta ${index}`}
                 </p>
-                <img onClick={clickSetaPlay} src={seta_play}/>
+                <img data-test="play-btn" onClick={clickSetaPlay} src={seta_play}/>
             </CardClosed>
             <CardOpen clicked={clickOpen}>
-                <p>
+                <p data-test="flashcard-text">
                     {question}
                 </p>
-                <img onClick={clickSetaVirar} src={seta_virar}/>
+                <img data-test="turn-btn" onClick={clickSetaVirar} src={seta_virar}/>
             </CardOpen>
             <CardOpen2 clicked={clickOpen2}>
-                <p>
+                <p data-test="flashcard-text">
                     {asnwer}
                 </p>
                 <Buttons 
@@ -69,13 +81,13 @@ export default function Card({ question, asnwer, index, setDoneCount ,doneCount}
                 />
             </CardOpen2>
             <CardClosed2 color={wordColor} clicked={clickClosed2}>
-                <p>
+                <p data-test="flashcard-text">
                     {`Pergunta ${index}`}
                 </p>
-                <img src={selectIcon()} />
+                <img data-test={selectTest()} src={selectIcon()} />
             </CardClosed2>
 
-        </>
+        </div>
     )
 }
 
