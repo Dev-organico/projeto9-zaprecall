@@ -55,20 +55,20 @@ export default function Card({ question, asnwer, index, setDoneCount ,doneCount}
 
     return (
 
-        <div data-test="flashcard" >
-            <CardClosed clicked={clickClosed}>
+        <>
+            <CardClosed data-test="flashcard" clicked={clickClosed}>
                 <p data-test="flashcard-text">
                     {`Pergunta ${index}`}
                 </p>
                 <img data-test="play-btn" onClick={clickSetaPlay} src={seta_play}/>
             </CardClosed>
-            <CardOpen clicked={clickOpen}>
+            <CardOpen data-test="flashcard" clicked={clickOpen}>
                 <p data-test="flashcard-text">
                     {question}
                 </p>
                 <img data-test="turn-btn" onClick={clickSetaVirar} src={seta_virar}/>
             </CardOpen>
-            <CardOpen2 clicked={clickOpen2}>
+            <CardOpen2 data-test="flashcard" clicked={clickOpen2}>
                 <p data-test="flashcard-text">
                     {asnwer}
                 </p>
@@ -80,14 +80,14 @@ export default function Card({ question, asnwer, index, setDoneCount ,doneCount}
                 setWordColor={setWordColor}
                 />
             </CardOpen2>
-            <CardClosed2 color={wordColor} clicked={clickClosed2}>
+            <CardClosed2 data-test="flashcard" color={wordColor} clicked={clickClosed2}>
                 <p data-test="flashcard-text">
                     {`Pergunta ${index}`}
                 </p>
                 <img data-test={selectTest()} src={selectIcon()} />
             </CardClosed2>
 
-        </div>
+        </>
     )
 }
 
